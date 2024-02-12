@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./css/giohang.css" rel="stylesheet" />
+    <script src="./js/cart.js"></script>
+    <script src="./js/sanpham.js"></script>
+    <script>
+        $(document).ready(function () {
+              $('.cus-checkbox').on('change', function () {
+                  updateTotalAmount();
+              });
+              $('#select-all').on('change', function () {
+                  $('.cus-checkbox').prop('checked', $(this).prop('checked'));
+                  updateTotalAmount();
+              });
+  
+              function updateTotalAmount() {
+                var totalAmount = 0;
+                $('.cus-checkbox.normal-check:checked').each(function () {
+                 var row = $(this).closest('.order-status-detail-item');
+                 var deliFeeText = row.find('.deli-fee').text().trim();
+                 var deliFee = parseCurrency(deliFeeText);
+                 totalAmount += deliFee;
+               });
+  
+               $('#total-delifee').text(formatCurrency(totalAmount));
+  
+              function parseCurrency(currencyText) {
+              console.log('Văn bản tiền tệ gốc:', currencyText);
+              var currencyValue = currencyText.replace(/[^\d]/g, ''); 
+              console.log('Chỉ chữ số:', currencyValue);
+              var parsedValue = parseFloat(currencyValue.replace('.', '').replace(',', '.')) || 0;
+               console.log('Giá trị đã phân tích:', parsedValue);
+                return parsedValue;}
+  
+              function formatCurrency(amount) {
+                  return amount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });}
+          }});
+    </script>
+</head>
+<body>
+    <link href="./css/header.css" rel="stylesheet" />
+    <link href="./css/footer.css" rel="stylesheet" />
+    <div class="container">
+      <div class="header-header">
+        <div class="header-1">
+          <div class="header-home">
+            <a class="header-logobutton" href="home.html">
+              <img src="./img/ie104logoCOLORED.png" alt="Logo" class="header-logo" />
+            </a>
+            <span class="header-text">
+              <span>Dịch vụ mua hàng hộ từ Nhật Bản</span>
+            </span>
+          </div>
+          <div class="header-sub">
+            <div class="header-subnav">
+              <div class="header-contact-btn">
+                <a class="header-contact" href=""><span>Liên hệ</span></a>
+              </div>
+              <div class="header-signin-btn">
+                <a class="header-signin" href="DangKy.html"><span>Đăng ký</span></a>
+              </div>
+              <div class="header-login-btn">
+                <a class="header-login" href="DangNhap.html"><span>Đăng nhập</span></a>
+              </div>
+            </div>
+            <a class="header-cart" href="GioHang.html">
+              <button class="header-cart">
+                <div class="header-cart-icon-container">
+                  <img src="./img/cart icon.png" alt="carticon" class="header-cart-icon" />
+                </div>
+                <div class="header-cart-info">
+                  <div class="header-cart-link">
+                    <a class="header-cart-link-text" href="GioHang.html"><span>Giỏ hàng</span></a>
+                  </div>
+                  <div class="header-amount">
+                      <span class="header-amount-text" id="tongSoSanPham"><span>0 sản phẩm</span></span>
+                  </div>
+                </div>
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="header-navbar">
+            <a class="header-nav-btn" href="home.html#bao-gia">
+              <span class="header-navbar-text">BÁO GIÁ NHANH</span>
+            </a>
+            <a class="header-nav-btn" href="HinhThucVanChuyen.html">
+              <span class="header-navbar-text">GIỚI THIỆU</span>
+            </a>
+            <a class="header-nav-btn" href="home.html#bang-gia">
+              <span class="header-navbar-text">BẢNG GIÁ</span>
+            </a>
+            <a class="header-nav-btn" href="order-status1.html">
+              <span class="header-navbar-text">THANH TOÁN PHÍ VẬN CHUYỂN</span>
+            </a>
+            <a class="header-nav-btn" href="order-status.html">
+              <span class="header-navbar-text">ĐƠN HÀNG</span>
+            </a>
+        </div>
+      </div>
+    <div>
+        <h2>GIỎ HÀNG</h2>
+    </div>
+
+    <div class="order-list" id="gioHang">
+            <div class="order-status-detail-container">
+              <div class="order-status-detail">
+                <div class="order-status-header">
+                  <div class="order-status-checklist">
+                    <input type="checkbox" name="" id="select-all" class="cus-checkbox">
+                    <span class="order-status-header-text"><span>Chọn tất cả</span></span>
+                  </div>
+                  <span class="order-status-header-text"><span>Hình ảnh</span></span>
+                  <span class="order-status-header-text"><span>Tên sản phẩm</span></span>
+                  <span class="order-status-header-text"><span>Giá  tiền</span></span>
+                  <span class="order-status-header-text"><span>Số lượng</span></span>
+                  <span class="order-status-header-text"><span>Thành tiền</span></span>
+                  <span class="order-status-header-text" style="width: 100px;"></span>
+                </div>
+                <div class="orderstatusdetail" id="cart-container">
+                  <!-- danh sách giỏ hàng -->
+                </div>
+                <div class="orderstatusdetail-1" id="cart-container-1">
+                  <!-- danh sách giỏ hàng -->
+                </div>
+              </div>
+            </div>
+            <div class="order-checkout">
+              <div class="checkout-text-container">
+                <span class="order-delifee-checkout-text">
+                  <span>Tổng tiền:</span>
+                </span>
+                <span class="order-delifee-checkout-text" id="total-delifee"><span>0 đ</span></span>
+              </div>
+              <a class="order-delifee-checkout-btn" href="checkout-1.html">
+                <span class="order-delifee-checkout-btn-text"><span>THANH TOÁN</span></span>
+              </a>
+            </div>
+          </div>
+    </div>    
+  </div>
+  <div class="footer">
+    <div class="footer-element">
+        <div class="logo-element">
+            <img src="./img/Logo Icon.png">
+        </div>
+        <p>Hotline: 022XXXXX</p>
+        <p>Địa chỉ: Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh</p>
+        <p>Email: online@gmail.com</p>
+    </div>
+    <div class="support">
+        <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+        <p>Câu hỏi thường gặp</p>
+        <p>Điều khoản dịch vụ</p>
+    </div>
+    <div class="policy">
+        <h3>CHÍNH SÁCH</h3>
+        <p>Chính sách bảo mật</p>
+        <p>Chính sách thanh toán</p>
+        <a href="HinhThucVanChuyen.html">Chính sách vận chuyển</a>
+        <p>Chính sách đổi trả</p>
+    </div>
+    <div class="contact">
+        <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
+        <i class="fa fa-facebook-square"> <span class="roboto-font">Facebook</span></i><br>
+        <i class="fa fa-instagram"> <span class="roboto-font">Instagram</span></i><br>
+        <i class="fa fa-twitter-square"></i> <span class="roboto-font">Twitter</span><br>
+        <i class="fa fa-youtube-play"> <span class="roboto-font">Youtube</span></i>
+    </div>     
+</div>
+    </div>
+    <script>
+      hienThiDanhSachItemGioHang();
+      function hienThiDanhSachItemGioHang() {
+        // lấy danh sách item giohang
+          var danhSachItemGioHang = layGioHangTuLocalStorage();
+          console.log(danhSachItemGioHang);
+
+
+          var HTML = chuyenDSVaoGioHangHTML(danhSachItemGioHang);
+          console.log(HTML);
+
+          if (danhSachItemGioHang.length < 4){
+          var nodeGioHang = document.getElementById('cart-container');
+          nodeGioHang.innerHTML=HTML;}
+          else{
+            var nodeGioHang = document.getElementById('cart-container-1');
+            nodeGioHang.innerHTML=HTML;
+          }
+          
+      }
+      
+      function chuyenDSVaoGioHangHTML(danhSachSanPham){
+          var HTMLDanhSachSanPham ='';
+          if (danhSachSanPham.length<4){
+            for(var i=0; i<danhSachSanPham.length; i++) {
+              var sanPham = danhSachSanPham[i];
+              var HTMLSanPham = chuyenDTSanPhamHTML(sanPham);
+              HTMLDanhSachSanPham = HTMLDanhSachSanPham + HTMLSanPham;
+          }}
+          else{
+            for(var i=0; i<danhSachSanPham.length; i++) {
+              var sanPham = danhSachSanPham[i];
+              var HTMLSanPham = chuyenDTSanPhamHTML1(sanPham);
+              HTMLDanhSachSanPham = HTMLDanhSachSanPham + HTMLSanPham;
+          }}
+          return HTMLDanhSachSanPham;
+        }
+      function chuyenDTSanPhamHTML(itemGioHang){
+        console.log(itemGioHang);
+        var giaTien = itemGioHang.gia.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        var thanhTien = (itemGioHang.gia*itemGioHang.soLuong).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+          var html = '';
+          html = html + '<div class="order-status-detail-item">\n'+
+          '                    <div class="order-status-checklist">\n'+
+          '                      <input type="checkbox" name="" id="" class="cus-checkbox normal-check">\n'+
+          '                      <div class="order-status-detail-item-text"></div>\n'+
+          '                    </div>\n'+
+          '                    <span class="order-status-detail-item-text"><img src=" ' + itemGioHang.hinhAnh +' " alt="" style="width: 250px; height: 110px; object-fit: contain;"></span>\n'+
+          '                    <span class="order-status-detail-item-text-ten"><span>'+ itemGioHang.ten +'</span></span>\n'+
+          '                    <span class="order-status-detail-item-text"><span>'+ giaTien +'</span></span>\n'+
+          '                    <div class="cart-amount-container">\n'+
+          '                        <input type="order-status-detail-item-text" id="sl" value=" '+itemGioHang.soLuong +'" >\n'+
+          '                    </div>\n'+
+          '                    <span class="order-status-detail-item-text deli-fee"><span>'+ thanhTien +'</span></span>\n'+
+          '                    <div class="order-status-detail-item-btn-box">\n'+
+          '                        <button class="order-status-detail-item-btn" id="nutXoa" onclick="xoaSanPham(this)">\n'+
+          '                          <span class="order-status-detail-item-btn-text"><span>Xóa</span></span>\n'+
+          '                        </button>\n'+
+          '                      </div>\n'+
+          '                  </div>';
+          return html;
+      }
+
+      function chuyenDTSanPhamHTML1(itemGioHang){
+        console.log(itemGioHang);
+        var giaTien = itemGioHang.gia.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        var thanhTien = (itemGioHang.gia*itemGioHang.soLuong).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+          var html = '';
+          html = html + '<div class="order-status-detail-item1">\n'+
+          '                    <div class="order-status-checklist">\n'+
+          '                      <input type="checkbox" name="" id="" class="cus-checkbox normal-check">\n'+
+          '                      <div class="order-status-detail-item-text"></div>\n'+
+          '                    </div>\n'+
+          '                    <span class="order-status-detail-item-text"><img src=" ' + itemGioHang.hinhAnh +' " alt="" style="width: 250px; height: 110px; object-fit: contain;"></span>\n'+
+          '                    <span class="order-status-detail-item-text-ten"><span>'+ itemGioHang.ten +'</span></span>\n'+
+          '                    <span class="order-status-detail-item-text"><span>'+ giaTien +'</span></span>\n'+
+          '                    <div class="cart-amount-container">\n'+
+          '                        <input type="order-status-detail-item-text" id="sl" value=" '+itemGioHang.soLuong +'" >\n'+
+          '                    </div>\n'+
+          '                    <span class="order-status-detail-item-text deli-fee"><span>'+ thanhTien +'</span></span>\n'+
+          '                    <div class="order-status-detail-item-btn-box">\n'+
+          '                        <button class="order-status-detail-item-btn" id="nutXoa" onclick="xoaSanPham(this)">\n'+
+          '                          <span class="order-status-detail-item-btn-text"><span>Xóa</span></span>\n'+
+          '                        </button>\n'+
+          '                      </div>\n'+
+          '                  </div>';
+          return html;
+      }
+
+      function xoaSanPham(x) {
+        var tr = x.parentElement.parentElement;
+        tr.remove();
+        var tenspElement = tr.querySelector('.order-status-detail-item-text-ten span'); // Tìm phần tử con chứa tên sản phẩm trong phần tử cha
+    var tensp = tenspElement.innerText;
+         alert(tensp);
+      xoaSanPhamKhoiLocalStorage(tensp);
+      }
+    </script>
+</body>
+</html>
