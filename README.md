@@ -1,10 +1,5 @@
 # IE104-FE - Internet and Web Technologies
 
-<div align="center">
-<img src="Images/Homepage.png" alt="GANJAP's homepage""/>
-  Homepage
-</div>
-
 ## 1. Introduction
 
 ## 2. Design Content
