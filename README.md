@@ -5,18 +5,20 @@
   Homepage
 </div>
 
-## 1. Introduction
+## Table of contents
 
-## 2. Design Content
-### 2.1. Topic objectives
-### 2.2. Details of the interface design process
-### 2.3. Architectural details
-### 2.4. Wireframe design
-### 2.5. Sitemap design
+### 1. Introduction
 
-## 3. Implementation
+### 2. Design Content
+#### 2.1. Topic objectives
+#### 2.2. Details of the interface design process
+#### 2.3. Architectural details
+#### 2.4. Wireframe design
+#### 2.5. Sitemap design
 
-## 4. Conclusion
+### 3. Implementation
+
+### 4. Conclusion
 
 
 
