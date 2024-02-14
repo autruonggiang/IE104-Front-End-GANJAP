@@ -20,5 +20,9 @@
 
 ### 4. Conclusion
 
+## Languages and Tools
+<a href="https://skillicons.dev">
+<img src="https://skillicons.dev/icons?i=html,css,js,vscode&perline=10" />
+</a>
 
 
