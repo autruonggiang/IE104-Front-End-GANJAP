@@ -2,7 +2,7 @@
 
 <div align="center">
 <img src="Images/Homepage.png" alt="GANJAP's homepage""/>
-  Homepage
+  <strong>GANJAP's Homepage</strong>
 </div>
 
 ## Table of contents
