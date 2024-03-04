@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GANJAP</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./css/home.css" rel="stylesheet" />
+</head>
+<body style="background-color: rgba(245, 245, 245, 1);">
+    <div class="container">
+      <div class="header-header">
+        <div class="header-1">
+          <div class="header-home">
+            <a class="header-logobutton" href="home.html">
+              <img src="./img/ie104logoCOLORED.png" alt="Logo" class="header-logo" />
+            </a>
+            <span class="header-text">
+              <span>Dịch vụ mua hàng hộ từ Nhật Bản</span>
+            </span>
+          </div>
+          <div class="header-sub">
+            <div class="header-subnav">
+              <div class="header-contact-btn">
+                <a class="header-contact" href=""><span>Liên hệ</span></a>
+              </div>
+              <div class="header-signin-btn">
+                <a class="header-signin" href="DangKy.html"><span>Đăng ký</span></a>
+              </div>
+              <div class="header-login-btn">
+                <a class="header-login" href="DangNhap.html"><span>Đăng nhập</span></a>
+              </div>
+            </div>
+            <a class="header-cart" href="GioHang.html">
+              <button class="header-cart">
+                <div class="header-cart-icon-container">
+                  <img src="./img/cart icon.png" alt="carticon" class="header-cart-icon" />
+                </div>
+                <div class="header-cart-info">
+                  <div class="header-cart-link">
+                    <a class="header-cart-link-text" href="GioHang.html"><span>Giỏ hàng</span></a>
+                  </div>
+                  <div class="header-amount">
+                      <span class="header-amount-text" id="tongSoSanPham"><span>0 sản phẩm</span></span>
+                  </div>
+                </div>
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="header-navbar">
+            <a class="header-nav-btn" href="home.html#bao-gia">
+              <span class="header-navbar-text">BÁO GIÁ NHANH</span>
+            </a>
+            <a class="header-nav-btn" href="HinhThucVanChuyen.html">
+              <span class="header-navbar-text">GIỚI THIỆU</span>
+            </a>
+            <a class="header-nav-btn" href="home.html#bang-gia">
+              <span class="header-navbar-text">BẢNG GIÁ</span>
+            </a>
+            <a class="header-nav-btn" href="order-status1.html">
+              <span class="header-navbar-text">THANH TOÁN PHÍ VẬN CHUYỂN</span>
+            </a>
+            <a class="header-nav-btn" href="order-status.html">
+              <span class="header-navbar-text">ĐƠN HÀNG</span>
+            </a>
+        </div>
+      </div>
+          <div class="home">
+            <div class="bao-gia" id="bao-gia">
+                <div class="bao-gia-title">
+                  <span class="bao-gia-title-text">
+                    MUA HÀNG HỘ TỪ CÁC TRANG WEB NHẬT BẢN
+                  </span>
+                </div>
+                <div class="bao-gia-link">
+                  <input type="text" name="" id="bao-gia-link-input" class="bao-gia-link-input" placeholder="Nhập link sản phẩm cần mua để được báo giá">
+                  <a class="bao-gia-link-btn" href="#" id="bao-gia-link-btn">
+                      <span class="bao-gia-link-btn-text"><span>Nhận báo giá</span></span>
+                  </a>
+              </div>
+            </div>
+        </div>
+        <div class="howto-container" id="howto-container">
+            <div class="howto-info-title-box ">
+                <span class="howto-info-title">
+                  Quy trình đặt hàng của GANJAP
+                </span>
+              </div>
+              <div class="howto-container-box">
+                <div class="howto-info">
+                  <img src="./img/log.png" alt="log" class="howto-info-img" />
+                  <div class="howto-info-text-box">
+                    <span class="howto-info-text">Đăng ký tài khoản</span>
+                  </div>
+                </div>
+                <div class="arrow-info-box">
+                  <div class="arrow-info-container">
+                    <img
+                      src="./img/arow.png"
+                      alt="arrow"
+                      class="arrow-info"
+                    />
+                  </div>
+                </div>
+                <div class="howto-info">
+                  <img src="./img/buy.png" alt="buy" class="howto-info-img" />
+                  <div class="howto-info-text-box">
+                    <span class="howto-info-text">
+                        Nhập link, nhận báo giá
+                        <br />
+                        và tiến hành mua hàng
+                    </span>
+                  </div>
+                </div>
+                <div class="arrow-info-box">
+                  <div class="arrow-info-container">
+                    <img
+                      src="./img/arow.png"
+                      alt="arrow"
+                      class="arrow-info"
+                    />
+                  </div>
+                </div>
+                <div class="howto-info">
+                  <img src="./img/oversea.png" alt="oversea" class="howto-info-img" />
+                  <div class="howto-info-text-box">
+                    <span class="howto-info-text">
+                        Hàng đến kho ở
+                        <br />
+                        nước ngoài
+                    </span>
+                  </div>
+                </div>
+                <div class="arrow-info-box">
+                    <div class="arrow-info-container">
+                        <img
+                          src="./img/arow.png"
+                          alt="arrow"
+                          class="arrow-info"
+                        />
+                      </div>
+                </div>
+                <div class="howto-info">
+                  <img src="./img/vn.png" alt="vn" class="howto-info-img" />
+                  <div class="howto-info-text-box">
+                    <span class="howto-info-text">
+                      Hàng đến Việt Nam, thanh toán phí vận chuyển quốc tế</span>
+                  </div>
+                </div>
+                <div class="arrow-info-box">
+                    <div class="arrow-info-container">
+                        <img
+                          src="./img/arow.png"
+                          alt="arrow"
+                          class="arrow-info"
+                        />
+                      </div>
+                </div>
+                <div class="howto-info">
+                  <img src="./img/delivery-man.png" alt="delivery" class="howto-info-img" />
+                  <div class="howto-info-text-box">
+                    <span class="howto-info-text">
+                      Giao hàng đến nhà bạn
+                    </span>
+                  </div>
+                </div>
+              </div>
+          </div>
+            <div class="banggia" id="bang-gia">
+              <div class="banggia-container">
+                <div class="banggia-box">
+                  <span class="banggia-text">
+                    <span class="white_text">Tỉ giá</span>
+                    <span class="orange_text">
+                      <span>175</span>
+                      <br />
+                      <span></span>
+                    </span>
+                    <span class="white_text">Phí dịch vụ</span>
+                    <span class="orange_text">5%</span>
+                  </span>
+                </div>
+              </div>
+              <div class="banggia-container">
+                <span class="banggia-box">
+                  <span class="banggia-text">
+                    <span class="white_text">Phí vận chuyển quốc tế</span>
+                    <br />
+                    <span>
+                        <span class="orange_text">190.000đ/kg</span>
+                    </span>
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="footer">
+              <div class="footer-element">
+                  <div class="logo-element">
+                      <img src="./img/Logo Icon.png">
+                  </div>
+                  <p>Hotline: 022XXXXX</p>
+                  <p>Địa chỉ: Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh</p>
+                  <p>Email: online@gmail.com</p>
+              </div>
+              <div class="support">
+                  <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+                  <p>Câu hỏi thường gặp</p>
+                  <p>Điều khoản dịch vụ</p>
+              </div>
+              <div class="policy">
+                  <h3>CHÍNH SÁCH</h3>
+                  <p>Chính sách bảo mật</p>
+                  <p>Chính sách thanh toán</p>
+                  <a href="HinhThucVanChuyen.html">Chính sách vận chuyển</a>
+                  <p>Chính sách đổi trả</p>
+              </div>
+              <div class="contact">
+                  <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
+                  <i class="fa fa-facebook-square"> <span class="roboto-font">Facebook</span></i><br>
+                  <i class="fa fa-instagram"> <span class="roboto-font">Instagram</span></i><br>
+                  <i class="fa fa-twitter-square"></i> <span class="roboto-font">Twitter</span><br>
+                  <i class="fa fa-youtube-play"> <span class="roboto-font">Youtube</span></i>
+              </div>     
+          </div>
+    </div>
+    <script src="./js/cart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        capNhatTongSoSanPham();
+        });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    var baoGiaLinkInput = document.getElementById("bao-gia-link-input");
+    var baoGiaLinkBtn = document.getElementById("bao-gia-link-btn");
+
+    baoGiaLinkBtn.addEventListener("click", function (event) {
+        event.preventDefault(); 
+
+        var inputValue = baoGiaLinkInput.value.trim();
+        if (/^\d+$/.test(inputValue)) {
+            var linkIndex = parseInt(inputValue) - 1; 
+            var links = ["sanpham.html", "sanpham1.html", "sanpham2.html", "sanpham3.html"];
+            if (linkIndex >= 0 && linkIndex < links.length) {
+                var targetLink = links[linkIndex];
+                window.location.href = targetLink;
+            } else {
+                alert("Sản phẩm đang được xử lý!");
+            }
+        } else {
+            alert("Link sản phẩm không hợp lệ!");}})})
+    </script>
+</body>
+</html>

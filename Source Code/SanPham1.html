@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./js/cart.js"></script>
+    <script src="./js/sanpham.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            font-family: 'Roboto';
+            background-color: rgba(245, 245, 245, 1);
+        }
+
+        .container{
+            height:40rem;
+            width:70rem;
+            display:grid;
+            margin:auto;
+            grid-template-columns: 40% 60%;
+            background-color: rgba(245, 245, 245, 1);
+            
+        }
+
+        .container-images{
+            height:37rem;
+            width:90%;
+            margin:auto;
+            margin-right: 10px;
+        }
+
+        .container-content{
+            height:37rem;
+            width:93%;
+            margin:auto;
+            margin-left: 10px;
+            
+        }
+
+        .images{
+            position:relative;
+            height: auto;
+            width: 100%;
+            margin:10px;
+            border: 1px solid black;
+            border-radius: 7px;
+        }
+
+        #myImage{
+            width: 400px;
+            height: 400px;
+            object-fit: contain;
+            background-color: white;
+        }
+        #myImage1, #myImage2, #myImage3, #myImage4{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: white;
+        }
+
+        .flex-images{
+            display:flex;
+            height:15%;
+            margin:10px;
+            width:403.2px;
+            justify-content: space-between;
+        }
+
+        .flex-images-items{
+            height:100%;
+            width:80px;
+            border: 1px solid black;
+            border-radius: 7px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        h1{
+            margin-top:30px;
+            margin-left: 50px;
+        }
+
+        label{
+            margin-left: 50px;
+        }
+
+        select{
+            font-size: 16px;
+            border: none;
+            margin-left:30px;
+            margin-bottom: 16px;
+            margin-top: 16px;
+        }
+
+        .sanpham{
+            margin-left: 50px;
+        }
+
+        .button{
+            height:80px;
+            width:240px;
+            border-radius: 7px;
+            background-color:#F99417;
+            font-weight: bold;
+            margin-left:160px;
+            font-size: 20px;         
+            margin-top:30px;  
+            text-align: center;
+        }
+
+        .flex-content{
+            display:flex;
+            justify-content: flex-start;
+            width:800px;
+        }
+
+        .button1{
+            margin-left: 32px;
+            width:80px;
+            height:30px;
+            background-color: white;
+            margin-top:10px;
+        }
+
+        #color{
+            margin-right: 15px;
+        }
+
+        .button-addsub{
+            height:33px;
+            width:33px;
+            margin-top: 20px;
+            margin-left: 45px;
+            background-color:#4D4C7D ;
+            color:white;
+            text-align: center;
+        }
+
+        input{
+            height:29px;
+            width:80px;
+            text-align: center;
+            margin-top: 20px;
+            border: 1px solid black;
+            
+        }
+
+        .button1:hover{
+            border: 2px solid orangered; 
+        }
+
+        #count{
+            margin-top: 0;
+            font-size: small;
+        }
+
+        a{
+            text-decoration: none;
+            color:white;
+        }
+        
+        #nav-id:hover{
+            opacity:0.2;
+            margin-top:-0.09px;
+            padding:21px;
+            height:27.7px;
+            width:130px;
+            background: #F5F5F5;
+            color:black;
+        }
+
+        #button-addsub{
+            margin-left: 0;
+        }
+        #login-signup{
+            color:#363062;
+        }
+
+        #login-signup:hover{
+            opacity: 0.3;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <link href="./css/header.css" rel="stylesheet" />
+    <link href="./css/footer.css" rel="stylesheet" />
+    <div class="header-header">
+      <div class="header-1">
+        <div class="header-home">
+          <div class="header-logobutton">
+            <img src="./img/ie104logoCOLORED.png" alt="Logo" class="header-logo" />
+          </div>
+          <span class="header-text">
+            <span>Dịch vụ mua hàng hộ từ Nhật Bản</span>
+          </span>
+        </div>
+        <div class="header-sub">
+          <div class="header-subnav">
+            <div class="header-contact-btn">
+              <a class="header-contact" href=""><span>Liên hệ</span></a>
+            </div>
+            <div class="header-signin-btn">
+              <a class="header-signin" href="DangKy.html"><span>Đăng ký</span></a>
+            </div>
+            <div class="header-login-btn">
+              <a class="header-login" href="DangNhap.html"><span>Đăng nhập</span></a>
+            </div>
+          </div>
+          <a class="header-cart" href="GioHang.html">
+            <button class="header-cart">
+              <div class="header-cart-icon-container">
+                <img src="./img/cart icon.png" alt="carticon" class="header-cart-icon" />
+              </div>
+              <div class="header-cart-info">
+                <div class="header-cart-link">
+                  <a class="header-cart-link-text" href="GioHang.html"><span>Giỏ hàng</span></a>
+                </div>
+                <div class="header-amount">
+                    <span class="header-amount-text" id="tongSoSanPham"><span>0 sản phẩm</span></span>
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="header-navbar">
+          <a class="header-nav-btn" href="home.html#bao-gia">
+            <span class="header-navbar-text">BÁO GIÁ NHANH</span>
+          </a>
+          <a class="header-nav-btn" href="HinhThucVanChuyen.html">
+            <span class="header-navbar-text">GIỚI THIỆU</span>
+          </a>
+          <a class="header-nav-btn" href="home.html#bang-gia">
+            <span class="header-navbar-text">BẢNG GIÁ</span>
+          </a>
+          <a class="header-nav-btn" href="order-status1.html">
+            <span class="header-navbar-text">THANH TOÁN PHÍ VẬN CHUYỂN</span>
+          </a>
+          <a class="header-nav-btn" href="order-status.html">
+            <span class="header-navbar-text">ĐƠN HÀNG</span>
+          </a>
+      </div>
+    </div>
+    <div class="container">
+        <div class="container-images">
+            <div class="images">
+                <img src="https://m.media-amazon.com/images/I/61vtYCfXF8L._AC_SX466_.jpg" id="myImage" >
+            </div>
+            <div class="flex-images">
+                <div class="flex-images-items">
+                    <img src="https://m.media-amazon.com/images/I/51NSryb3NNL._AC_SX466_.jpg" id="myImage1" onmouseover="changeImage('https://m.media-amazon.com/images/I/51NSryb3NNL._AC_SX466_.jpg')" onmouseout="resetImage()">
+                </div>
+                <div class="flex-images-items">
+                    <img src="https://m.media-amazon.com/images/I/31TdGFIwGDL._AC_SX466_.jpg" id="myImage2" onmouseover="changeImage('https://m.media-amazon.com/images/I/31TdGFIwGDL._AC_SX466_.jpg')" onmouseout="resetImage()">
+                </div>
+                <div class="flex-images-items">
+                    <img src="https://m.media-amazon.com/images/I/51Ildo78BEL._AC_SX466_.jpg" id="myImage3" onmouseover="changeImage('https://m.media-amazon.com/images/I/51Ildo78BEL._AC_SX466_.jpg')" onmouseout="resetImage()">
+                </div>
+                <div class="flex-images-items">
+                    <img src="https://m.media-amazon.com/images/I/31VV1OroNDL._AC_SX466_.jpg" id="myImage4" onmouseover="changeImage('https://m.media-amazon.com/images/I/31VV1OroNDL._AC_SX466_.jpg')" onmouseout="resetImage()">
+                </div>
+            </div>
+        </div>
+        <div class="container-content">
+            <h1 id="tensanpham">Targus 4-Port USB 2.0 Hub with Sleek and Travel Friendly, Black (ACH114US)</h1>
+            <p id="giasanpham" class="sanpham"><span>&#8363; 672.451</span></p>           
+            <label for="select">Vận chuyển từ nước ngoài tới</label>
+            <select id="select">
+                <option value="0">An Giang</option>
+                <option value="1">Bà rịa Vũng Tàu</option>
+                <option value="2">Bạc Liêu</option>
+                <option value="3">Bắc Giang</option>
+                <option value="4">Bắc Kạn</option>
+                <option value="5">Bắc Ninh</option>
+                <option value="6">Bến Tre</option>
+                <option value="7">Bình Dương</option>
+                <option value="8">Bình Định</option>
+                <option value="9">Bình Phước</option>
+                <option value="10">Bình Thuận</option>
+                <option value="11">Cà Mau</option>
+                <option value="12">Cao Bằng</option>
+            </select>
+            <div class="flex-content">
+                <p class="sanpham" id="color">Màu sắc</p>
+                <button class="button1" id="den">Đen</button>
+                <button class="button1" id="xam">Xám</button>
+                <button class="button1" id="trang">Trắng</button>
+            </div>
+            <div class="flex-content">
+                <p class="sanpham">Số lượng</p>
+                <button class="button-addsub" id="button-subtract">-</button>
+                <input type="text" id="sl" value="1" >
+                <button class="button-addsub" id="button-addsub">+</button>
+            </div>
+            <button  class="button"  onclick="onClickThemSanPhamVaoGioHang()">Thêm vào giỏ hàng</button>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-element">
+            <div class="logo-element">
+                <img src="./img/Logo Icon.png">
+            </div>
+            <p>Hotline: 022XXXXX</p>
+            <p>Địa chỉ: Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh</p>
+            <p>Email: online@gmail.com</p>
+        </div>
+        <div class="support">
+            <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+            <p>Câu hỏi thường gặp</p>
+            <p>Điều khoản dịch vụ</p>
+        </div>
+        <div class="policy">
+            <h3>CHÍNH SÁCH</h3>
+            <p>Chính sách bảo mật</p>
+            <p>Chính sách thanh toán</p>
+            <p>Chính sách vận chuyển</p>
+            <p>Chính sách đổi trả</p>
+        </div>
+        <div class="contact">
+            <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
+            <i class="fa fa-facebook-square"> <span class="roboto-font">Facebook</span></i><br>
+            <i class="fa fa-instagram"> <span class="roboto-font">Instagram</span></i><br>
+            <i class="fa fa-twitter-square"></i> <span class="roboto-font">Twitter</span><br>
+            <i class="fa fa-youtube-play"> <span class="roboto-font">Youtube</span></i>
+        </div>     
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        let cartItemCount = localStorage.getItem('cartItemCount');
+        let count = document.getElementById("tongSoSanPham");
+        count.innerHTML = cartItemCount + " sản phẩm";
+        });
+        function changeImage(newSrc) {
+        document.getElementById('myImage').src = newSrc;
+        myImage.src = newSrc;
+        myImage.style.width = '403.2px';
+        myImage.style.height = '408.39px';
+        myImage.style.objectFit = 'contain';
+        myImage.style.overflow='hidden';
+        }
+        function resetImage() {
+            document.getElementById('myImage').src = 'https://m.media-amazon.com/images/I/81Q42kbm5kL._AC_SX466_.jpg';   
+        }
+        let inputSL = document.getElementById('sl');
+        let addButton = document.getElementById('button-addsub');
+        let subButton = document.getElementById('button-subtract');
+        addButton.addEventListener('click', function () {
+            let SL = parseInt(inputSL.value);
+            inputSL.value = SL + 1;
+        });
+        subButton.addEventListener('click', function () {
+            let SL = parseInt(inputSL.value);
+            if (SL > 1) {
+                inputSL.value = SL - 1;
+            }
+        });
+        function togglebutton(buttonId) {
+            let buttoncolor = document.getElementById(buttonId);
+            if (buttoncolor.style.backgroundColor === '' || buttoncolor.style.backgroundColor === 'white') {
+                buttoncolor.style.backgroundColor = '#F99417';
+                buttoncolor.style.borderColor = 'blue';
+            }
+        };
+        function resettogglebutton(buttonId){
+            let resetbutton = ['den', 'xam', 'trang'];
+            resetbutton.forEach(function (buttonId) {
+                var button = document.getElementById(buttonId);
+                button.style.backgroundColor = 'white';
+                button.style.borderColor = 'black';
+            });
+        };
+        document.getElementById('den').addEventListener('click', function () {
+            resettogglebutton('den');
+            togglebutton('den');
+        });
+        document.getElementById('xam').addEventListener("click",function(){
+            resettogglebutton('xam');
+            togglebutton('xam');
+        });
+        document.getElementById('trang').addEventListener("click",function(){
+            resettogglebutton('trang');
+            togglebutton('trang');
+        });
+    </script>
+    <script>
+        function onClickThemSanPhamVaoGioHang(){
+            var soLuong = parseInt(document.getElementById('sl').value);
+            var ten = document.getElementById('tensanpham').innerText;
+            var hinhAnh = document.getElementById("myImage").src;
+            var gia = parseFloat(document.getElementById('giasanpham').innerText.replace(/[^\d.]/g, '').replace('.','').replace(' ','').replace(/[.,]/g, ''));
+            alert('thanhcong')
+            var danhSachItemGioHang = layDanhSachItemGioHang();
+            var coTonTaiTrongDanhSachItemGioHang = false;
+            for (var i = 0; i < danhSachItemGioHang.length; i++){
+                var itemGioHangHienTai = danhSachItemGioHang[i];
+
+                if (itemGioHangHienTai.ten == ten) {
+                    danhSachItemGioHang[i].soLuong++;
+                    coTonTaiTrongDanhSachItemGioHang = true;
+                }
+            }
+
+            if (coTonTaiTrongDanhSachItemGioHang == false){
+                var itemGioHang = TaoDoiTuongItemGioHang(hinhAnh, ten, gia, 1);
+                danhSachItemGioHang.push(itemGioHang);
+            }
+
+            //lưu vào local storage
+            luuDanhSachItemGioHangVaoLocalStorage(danhSachItemGioHang);
+
+        }
+    </script>
+</body>
+</html>

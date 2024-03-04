@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./css/checkout-1.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <link href="./css/header.css" rel="stylesheet" />
+        <link href="./css/footer.css" rel="stylesheet" />
+        <div class="header-header">
+          <div class="header-1">
+            <div class="header-home">
+              <a class="header-logobutton" href="home.html">
+                <img src="./img/ie104logoCOLORED.png" alt="Logo" class="header-logo" />
+              </a>
+              <span class="header-text">
+                <span>Dịch vụ mua hàng hộ từ Nhật Bản</span>
+              </span>
+            </div>
+            <div class="header-sub">
+              <div class="header-subnav">
+                <div class="header-contact-btn">
+                  <a class="header-contact" href=""><span>Liên hệ</span></a>
+                </div>
+                <div class="header-signin-btn">
+                  <a class="header-signin" href="DangKy.html"><span>Đăng ký</span></a>
+                </div>
+                <div class="header-login-btn">
+                  <a class="header-login" href="DangNhap.html"><span>Đăng nhập</span></a>
+                </div>
+              </div>
+              <a class="header-cart" href="GioHang.html">
+                <button class="header-cart">
+                  <div class="header-cart-icon-container">
+                    <img src="./img/cart icon.png" alt="carticon" class="header-cart-icon" />
+                  </div>
+                  <div class="header-cart-info">
+                    <div class="header-cart-link">
+                      <a class="header-cart-link-text" href="GioHang.html"><span>Giỏ hàng</span></a>
+                    </div>
+                    <div class="header-amount">
+                        <span class="header-amount-text" id="tongSoSanPham"><span>0 sản phẩm</span></span>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="header-navbar">
+              <a class="header-nav-btn" href="home.html#bao-gia">
+                <span class="header-navbar-text">BÁO GIÁ NHANH</span>
+              </a>
+              <a class="header-nav-btn" href="HinhThucVanChuyen.html">
+                <span class="header-navbar-text">GIỚI THIỆU</span>
+              </a>
+              <a class="header-nav-btn" href="home.html#bang-gia">
+                <span class="header-navbar-text">BẢNG GIÁ</span>
+              </a>
+              <a class="header-nav-btn" href="order-status1.html">
+                <span class="header-navbar-text">THANH TOÁN PHÍ VẬN CHUYỂN</span>
+              </a>
+              <a class="header-nav-btn" href="order-status.html">
+                <span class="header-navbar-text">ĐƠN HÀNG</span>
+              </a>
+          </div>
+        </div>
+        <div class="checkout-status-container">
+            <div class="checkout-status">
+              <span class="checkout-status-text light-text">
+                <span>Điền thông tin nhận hàng</span>
+              </span>
+            </div>
+            <div class="status-icon">
+              <img
+                src="./img/Line 5.png"
+                class="line-img-left"
+              />
+              <img
+                src="./img/Line 5.png"
+                class="line-img-right"
+              />
+              <img
+                src="./img/checkbox-circle-fill 3.png"
+                class="check-icon"
+              />
+            </div>
+            <div class="checkout-status">
+              <span class="checkout-status-text dark-text">
+                <span>Chọn phương thức thanh toán</span>
+              </span>
+            </div>
+            <div class="status-icon">
+              <img
+                src="./img/Line 5.png"
+                class="line-img-left"
+              />
+              <img
+                src="./img/Line 5.png"    
+                class="line-img-right"
+              />
+              <img
+                src="./img/checkbox-circle-fill 3.png"
+                class="check-icon"
+              />
+            </div>
+            <div class="checkout-status ">
+                <span class="checkout-status-text dark-text">
+                    <span>Hoàn tất</span>
+                </span>
+            </div>
+          </div>
+        <div class="frame39591-frame39591">
+            <div class="deli-form-container">
+                <form class="deli-form-detail">
+                  <span class="deli-form-title">
+                    Thông tin nhận hàng
+                  </span>
+                  <div class="deli-form-input">
+                    <div class="deli-form-input-field-1">
+                      <div class="deli-form-input-box">
+                        <label class="deli-form-input-label">Họ</label>
+                        <input type="text" class="input-short" id="ho">
+                      </div>
+                      <div class="deli-form-input-box">
+                        <label class="deli-form-input-label">Tên</label>
+                        <input type="text" class="input-short" id="ten">
+                      </div>
+                      <div class="deli-form-input-box">
+                        <label class="deli-form-input-label">
+                          Địa chỉ email
+                        </label>
+                        <input type="email" class="input-long" id="email">
+                      </div>
+                    </div>
+                    <div class="deli-form-input-field-1">
+                      <div class="deli-form-input-box">
+                        <label class="deli-form-input-label">
+                          Số điện thoại
+                        </label>
+                        <input type="tel" class="input-long" id="tel">
+                      </div>
+                    </div>
+                    <div class="deli-form-input-box">
+                      <label class="deli-form-input-label">
+                        Địa chỉ nhận hàng
+                      </label>
+                      <input type="tel" class="input-long" id="dc">
+                    </div>
+                  </div>
+                  <button class="next-btn" id="checkout-next">
+                    <span class="next-btn-text">Tiếp</span>
+                  </button>
+                </form>
+            </div>
+            <div class="order-detail">
+                <span class="order-detail-title">Đơn hàng</span>
+                <div class="order-detail-list">
+                  <div class="order-detail-list-item">
+                    <div class="item-details">
+                      <span class="item-details-name">Đồng hồ Casio</span>
+                      <div class="item-details-price">
+                        <span class="item-details-op">81.000 đ</span>
+                        <span class="item-details-num">1</span>
+                        <span class="item-details-p">81.000 đ</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="order-detail-list-item">
+                    <div class="item-details">
+                      <span class="item-details-name">Đồng hồ Casio</span>
+                      <div class="item-details-price">
+                        <span class="item-details-op">81.000 đ</span>
+                        <span class="item-details-num">1</span>
+                        <span class="item-details-p">81.000 đ</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sale-code">
+                  <span class="sale-code-title">Mã giảm giá</span>
+                  <form class="sale-code-apply">
+                    <input type="text" class="sale-code-input">
+                    <button class="sale-code-apply-btn">
+                      <span class="sale-code-apply-btn-text">Apply</span>
+                    </button>
+                  </form>
+                </div>
+                <div class="order-total">
+                  <div class="order-total-field">
+                    <span class="order-total-field-title">Tạm tính</span>
+                    <span class="order-total-field-detail normal-text">162.000 đ</span>
+                  </div>
+                  <div class="order-total-field">
+                    <span class="order-total-field-title">Phí ship</span>
+                    <span class="order-total-field-detail green-text">Miễn phí</span>
+                  </div>
+                  <div class="order-total-field">
+                    <span class="order-total-field-title">Giảm giá</span>
+                    <span class="order-total-field-detail normal-text">-10.000 đ</span>
+                  </div>
+                  <div class="order-total-all">
+                    <span class="order-total-all-t">Tổng cộng</span>
+                    <span class="order-total-all-p">152.000 đ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="footer">
+          <div class="footer-element">
+              <div class="logo-element">
+                  <img src="./img/Logo Icon.png">
+              </div>
+              <p>Hotline: 022XXXXX</p>
+              <p>Địa chỉ: Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh</p>
+              <p>Email: online@gmail.com</p>
+          </div>
+          <div class="support">
+              <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+              <p>Câu hỏi thường gặp</p>
+              <p>Điều khoản dịch vụ</p>
+          </div>
+          <div class="policy">
+              <h3>CHÍNH SÁCH</h3>
+              <p>Chính sách bảo mật</p>
+              <p>Chính sách thanh toán</p>
+              <a href="HinhThucVanChuyen.html">Chính sách vận chuyển</a>
+              <p>Chính sách đổi trả</p>
+          </div>
+          <div class="contact">
+              <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
+              <i class="fa fa-facebook-square"> <span class="roboto-font">Facebook</span></i><br>
+              <i class="fa fa-instagram"> <span class="roboto-font">Instagram</span></i><br>
+              <i class="fa fa-twitter-square"></i> <span class="roboto-font">Twitter</span><br>
+              <i class="fa fa-youtube-play"> <span class="roboto-font">Youtube</span></i>
+          </div>     
+      </div>
+    </div>
+    <script src="./js/cart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        capNhatTongSoSanPham();
+        });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var nextButton = document.getElementById("checkout-next");
+    
+        nextButton.addEventListener("click", function () {
+          // Lấy thông tin từ form (ho, ten, email, tel, dc)
+          var ho = document.getElementById("ho").value;
+          var ten = document.getElementById("ten").value;
+          var email = document.getElementById("email").value;
+          var tel = document.getElementById("tel").value;
+          var dc = document.getElementById("dc").value;
+    
+          // Lưu thông tin vào localStorage (hoặc có thể lưu vào session để sử dụng trên trang checkout-2.html)
+          localStorage.setItem("ho", ho);
+          localStorage.setItem("ten", ten);
+          localStorage.setItem("email", email);
+          localStorage.setItem("tel", tel);
+          localStorage.setItem("dc", dc);
+    
+          // Chuyển hướng đến trang checkout-2.html
+          window.location.href = "checkout-2.html";
+        });
+      });
+    </script>
+</body>
+</html>
