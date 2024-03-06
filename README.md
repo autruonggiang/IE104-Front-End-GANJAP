@@ -1,4 +1,4 @@
-# IE104-FE - Internet and Web Technologies
+# IE104-FE - Internet and Web Technologies's Project
 
 <div align="center">
 <img src="Images/Homepage.png" alt="GANJAP's homepage""/>
